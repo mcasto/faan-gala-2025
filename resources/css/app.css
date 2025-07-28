@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.left-panel {
+  background-size: cover;
+  background-position: top right;
+}
+
+.right-panel-desktop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: slategray;
+}
+
+.times-font {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.playfair-font {
+  font-family: "Playfair Display", serif;
+}
+
+.outlined-text {
+  color: white;
+  text-shadow: -2px -2px 0 slategray, 2px -2px 0 slategray, -2px 2px 0 slategray,
+    2px 2px 0 slategray;
+}
+
+.intro-image {
+  max-width: 15vw;
+  object-fit: cover;
+  padding: 1rem;
+}
+
+@media (max-width: 767px) {
+  .intro-image {
+    max-width: 23vw;
+    padding: 0.5rem;
+  }
+}
