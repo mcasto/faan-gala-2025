@@ -3,13 +3,10 @@
         <span class="font-bold text-lg">Gala FAAN-tastica 2025</span>
         <div class="hidden md:flex md:items-center md:space-x-4">
             @for ($index = 0; $index < count($links); $index++)
-                @for ($index = 0; $index < count($links); $index++)
-                    <a href="{{ route($links[$index]['name']) }}"
-                        class="px-4 py-2 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition
+                <a href="{{ route($links[$index]['name']) }}"
+                    class="px-4 py-2 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition
               {{ Route::currentRouteName() === $links[$index]['name'] ? 'border-1 border-white font-bold underline' : '' }}">
-                        {{ $links[$index]['title'] }}
-                    </a>
-                @endfor
+                    {{ $links[$index]['title'] }}
                 </a>
             @endfor
 
