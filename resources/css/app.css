@@ -32,6 +32,10 @@
   font-family: "Playfair Display", serif;
 }
 
+.arial-black-font {
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
 .outlined-text {
   color: white;
   text-shadow: -2px -2px 0 slategray, 2px -2px 0 slategray, -2px 2px 0 slategray,
@@ -49,4 +53,28 @@
     max-width: 23vw;
     padding: 0.5rem;
   }
+}
+
+.sponsorship-bg {
+  background-color: rgba(237, 212, 210, 0.7);
+  height: 100%;
+  width: 95dvw;
+  padding: 3rem;
+}
+
+@media (max-width: 767px) {
+  .sponsorship-bg {
+    padding: 1rem;
+  }
+}
+
+.sponsorship-level {
+  margin-top: 1rem;
+}
+
+.sponsorship-banner {
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.8);
 }

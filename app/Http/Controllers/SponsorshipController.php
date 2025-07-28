@@ -8,6 +8,14 @@ class SponsorshipController extends Controller
 {
     public function show()
     {
-        return view('sponsorship-opportunities');
+        $content = [
+            'header' => __('sponsorship-opportunities.header'),
+            'date' => __('sponsorship-opportunities.date'),
+            'location' => __('sponsorship-opportunities.location'),
+            'note' => __('sponsorship-opportunities.note'),
+            'levels' => __('sponsorship-opportunities.levels'),
+        ];
+
+        return view('sponsorship-opportunities', $content);
     }
 }

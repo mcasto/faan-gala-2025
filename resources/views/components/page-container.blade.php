@@ -18,7 +18,7 @@
 
 <body>
     <x-navigation />
-    <div class='pt-18'>
+    <div class='pt-14 md:pt-18'>
         {{ $slot }}
     </div>
 </body>
