@@ -66,7 +66,7 @@
     ],
     "deploy-hostinger": [
       "[ -f ./symlink.sh ] || { echo 'symlink.sh not found'; exit 1; }",
-      "mv .env.production .env",
+      "[ -f .env.production ] && mv .env.production .env || echo '.env.production not found, skipping move.'",
       "composer2 install --optimize-autoloader --no-dev",
       "@php artisan config:cache",
       "@php artisan route:cache",
