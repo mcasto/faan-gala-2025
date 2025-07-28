@@ -23,7 +23,7 @@ class Navigation extends Component
     {
         $links = [
             ['name' => 'home', 'title' => 'Home', 'url' => '#'],
-            ['name' => 'sponsorship-opportunities', 'title' => 'Sponshorship Opportunities', 'url' => '#'],
+            ['name' => 'sponsorship-opportunities', 'title' => 'Sponsorship Opportunities', 'url' => '#'],
             ['name' => 'join-us', 'title' => 'Join Us', 'url' => '#'],
             ['name' => 'auction-palooza', 'title' => 'Auction Palooza', 'url' => '#'],
         ];
