@@ -1,5 +1,7 @@
-<x-page-container>
-    <div>
-        Auction Palooza
-    </div>
-</x-page-container>
+@extends('layouts.app')
+
+@section('title', 'Auction Palooza')
+
+@section('content')
+    Gala Palooza
+@endsection
