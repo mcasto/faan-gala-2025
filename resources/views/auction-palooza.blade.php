@@ -7,23 +7,28 @@
         <!-- Left Panel -->
         <div class="w-full md:w-1/2 relative left-panel"
             style="background-image: url('storage/images/auction-palooza-bg.jpeg');">
-            <div class="absolute inset-0 "></div>
             <div class="relative z-10 flex flex-col justify-between p-8 text-white min-h-[60vh] md:min-h-screen h-full">
-                <div class='w-1/1  bg-white/75'>
+                <div class='w-1/1 '>
                     <img src="storage/images/auction-palooza-fw.png" align="right" class="intro-image" />
 
                     {!! $leftPanel !!}
+
+
                 </div>
             </div>
         </div>
 
         <!-- Right Panel -->
-        <div class="w-full md:w-1/2 relative flex flex-col justify-center items-center bg-slate-600">
-            <div class="absolute inset-0 bg-black/30"></div>
-            <div class="relative z-10 w-full p-8">
-                <div class="text-white">
-                    {{-- {!! $rightPanel !!} --}}
-                </div>
-            </div>
+        <div class="w-full md:w-1/2 relative flex flex-col  bg-white auction-palooza-right-panel"
+            style="background-image: url('storage/images/auction-palooza-right-bg.png');">
+            {!! $rightPanel !!}
+
+            <img src="storage/images/auction-palooza-high-five.png" class="absolute bottom-0 right-0 w-2/5" />
         </div>
-    @endsection
+    </div>
+
+    <!-- Bottom Panel -->
+    <div>
+        {!! $bottomPanel !!}
+    </div>
+@endsection

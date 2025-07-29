@@ -11,6 +11,7 @@ class AuctionPaloozaController extends Controller
         $content = [
             'leftPanel' => __('auction-palooza.leftPanel'),
             'rightPanel' => __('auction-palooza.rightPanel'),
+            'bottomPanel' => __('auction-palooza.bottomPanel'),
         ];
 
         return view('auction-palooza', $content);

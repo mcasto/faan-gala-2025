@@ -137,3 +137,20 @@
 .auction-palooza-left-panel div {
   padding-bottom: 1rem;
 }
+
+.auction-palooza-right-panel {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.auction-palooza-right-panel ul {
+  padding-left: 3rem;
+  list-style: inside disc;
+}
+
+@media (max-width: 767px) {
+  .auction-palooza-right-panel ul {
+    padding-left: 1rem;
+    list-style: inside disc;
+  }
+}
