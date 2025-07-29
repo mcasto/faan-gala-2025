@@ -8,6 +8,11 @@ class JoinUsController extends Controller
 {
     public function show()
     {
-        return view('join-us');
+        $content = [
+            'upperRight' => __('join-us.upperRight'),
+            'lowerLeft' => __('join-us.lowerLeft'),
+        ];
+
+        return view('join-us', $content);
     }
 }

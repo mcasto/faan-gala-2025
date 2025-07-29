@@ -1,4 +1,8 @@
-<x-page-container>
+@extends('layouts.app')
+
+@section('title', 'Welcome')
+
+@section('content')
     <div class="min-h-screen flex flex-col md:flex-row">
         <!-- Left Panel -->
         <div class="w-full md:w-1/2 relative left-panel"
@@ -27,4 +31,4 @@
             </div>
         </div>
     </div>
-</x-page-container>
+@endsection

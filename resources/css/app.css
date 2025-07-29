@@ -78,3 +78,58 @@
   height: 200px;
   background-color: rgba(255, 255, 255, 0.8);
 }
+
+.join-us-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px);
+  z-index: 0;
+  transform: scale(1.1); /* Prevent blur edges from showing */
+}
+
+.circle-bg {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.join-us-upper-right {
+  width: 175px;
+  height: 175px;
+}
+
+.join-us-lower-left {
+  width: 30rem;
+  height: 30rem;
+}
+
+.join-us-lower-left-text {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.join-us-lower-left-text div {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 767px) {
+  .join-us-lower-left {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .join-us-lower-left-text {
+    color: white;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+}
