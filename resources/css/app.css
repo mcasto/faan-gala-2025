@@ -133,3 +133,7 @@
     line-height: 1.2;
   }
 }
+
+.auction-palooza-left-panel div {
+  padding-bottom: 1rem;
+}

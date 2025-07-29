@@ -11,9 +11,9 @@
                 <div class="join-us-upper-right self-end bg-blue-300/60 p-4 circle-bg mb-4">
                     {!! $upperRight !!}
                 </div>
-                <div class="join-us-lower-left circle-bg  bg-blue-800/60">
+                {{-- <div class="join-us-lower-left circle-bg  bg-blue-800/60">
                     {!! $lowerLeft !!}
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -22,7 +22,7 @@
             <div class="absolute inset-0 bg-black/30"></div>
             <div class="relative z-10 w-full p-8">
                 <div class="text-white">
-                    I assume there'll be some sort of form here or other interaction for "joining us.
+                    {!! $rightPanel !!}
                 </div>
             </div>
         </div>

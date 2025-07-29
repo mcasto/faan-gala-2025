@@ -10,7 +10,7 @@ class JoinUsController extends Controller
     {
         $content = [
             'upperRight' => __('join-us.upperRight'),
-            'lowerLeft' => __('join-us.lowerLeft'),
+            'rightPanel' => __('join-us.rightPanel'),
         ];
 
         return view('join-us', $content);

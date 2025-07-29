@@ -8,6 +8,11 @@ class AuctionPaloozaController extends Controller
 {
     public function show()
     {
-        return view('auction-palooza');
+        $content = [
+            'leftPanel' => __('auction-palooza.leftPanel'),
+            'rightPanel' => __('auction-palooza.rightPanel'),
+        ];
+
+        return view('auction-palooza', $content);
     }
 }
