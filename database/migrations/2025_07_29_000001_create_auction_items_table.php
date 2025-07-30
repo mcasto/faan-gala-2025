@@ -30,7 +30,7 @@ class CreateAuctionItemsTable extends Migration
             $table->text('terms_and_conditions')->nullable();
 
             // FAAN Volunteer Information
-            $table->boolean('faan_volunteer')->default(false);
+            $table->string('faan_volunteer')->nullable();
             $table->string('volunteer_email')->nullable();
             $table->dateTime('item_received_timestamp')->nullable();
 
