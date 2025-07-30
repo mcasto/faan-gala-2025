@@ -36,7 +36,79 @@
                 </svg>
                 {{ __('navigation.change_language') }}
             </a>
+
+            <a href="/admin" class="px-4 py-2 rounded text-slate-800 hover:text-white transition">
+                <i class="fas fa-cog"></i>
+            </a>
         </div>
-        <span class="md:hidden">[Hamburger]</span>
+        <!-- Hamburger Button -->
+        <button class="md:hidden text-white focus:outline-none" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
     </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+        class="md:hidden fixed inset-0 bg-slate-800 bg-opacity-95 transform translate-x-full transition-transform duration-300 ease-in-out z-40">
+        <div class="flex flex-col h-full p-6">
+            <!-- Close Button -->
+            <button class="self-end text-white mb-8 focus:outline-none" onclick="toggleMobileMenu()">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+
+            <!-- Mobile Navigation Links -->
+            <div class="flex flex-col space-y-4">
+                <a href="{{ route('home') }}"
+                    class="px-4 py-3 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center
+                    {{ Route::currentRouteName() === 'home' ? 'border border-white font-bold' : '' }}">
+                    {{ __('navigation.home') }}
+                </a>
+
+                <a href="{{ route('sponsorship-opportunities') }}"
+                    class="px-4 py-3 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center
+                    {{ Route::currentRouteName() === 'sponsorship' ? 'border border-white font-bold' : '' }}">
+                    {{ __('navigation.sponsorship') }}
+                </a>
+
+                <a href="{{ route('join-us') }}"
+                    class="px-4 py-3 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center
+                    {{ Route::currentRouteName() === 'join' ? 'border border-white font-bold' : '' }}">
+                    {{ __('navigation.join') }}
+                </a>
+
+                <a href="{{ route('auction-palooza') }}"
+                    class="px-4 py-3 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center
+                    {{ Route::currentRouteName() === 'auction' ? 'border border-white font-bold' : '' }}">
+                    {{ __('navigation.auction') }}
+                </a>
+
+                <div class="pt-4 border-t border-slate-600">
+                    <a href="{{ app()->getLocale() === 'en' ? '/set-language/es' : '/set-language/en' }}"
+                        class="px-4 py-3 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                            <path stroke="currentColor" stroke-width="2"
+                                d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
+                        </svg>
+                        {{ __('navigation.change_language') }}
+                    </a>
+                </div>
+
+                <a href="/admin" class="px-4 py-3 text-white hover:text-yellow-500 transition text-center mt-2">
+                    <i class="fas fa-cog mr-2"></i>
+                    Admin
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('translate-x-full');
+            menu.classList.toggle('translate-x-0');
+        }
+    </script>
 </nav>
