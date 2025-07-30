@@ -19,6 +19,9 @@ Route::get('/join-us', [JoinUsController::class, 'show'])
 Route::get('/auction-palooza', [AuctionPaloozaController::class, 'show'])
     ->name('auction-palooza');
 
+Route::post('/auction-palooza', [AuctionPaloozaController::class, 'store'])
+    ->name('auction-palooza.store');
+
 // Language switcher route
 Route::get('/set-language/{locale}', function ($locale) {
     if (!in_array($locale, config('app.available_locales'))) {

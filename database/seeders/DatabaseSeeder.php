@@ -13,8 +13,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Seed the statuses first as they're required for auction items
+        $this->call([
+            ItemStatusSeeder::class
+        ]);
 
+        // Create test user
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
