@@ -47,8 +47,11 @@ class AuctionPaloozaController extends Controller
 
         // Handle file upload if an image was provided
         if ($request->hasFile('item_image')) {
-            $path = '/images/auction-items';
-            $path = $request->file('item_image')->storeAs($path, $request->file('item_image')->hashName());
+            $path = $request->file('item_image')->storeAs(
+                'images/auction-items',  // This path is relative to storage/app/public
+                $request->file('item_image')->hashName(),
+                'public'  // Specify the public disk
+            );
             $validatedData['item_image_path'] = "storage/$path";
         }
 
