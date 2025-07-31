@@ -14,6 +14,7 @@ class WelcomeController extends Controller
             'lowerLeft' => __('welcome.lowerLeft'),
             'introduction' => __('welcome.introduction'),
             'rightPanel' => __('welcome.rightPanel'),
+            'galaPanel' => __('welcome.galaPanel'),
         ];
 
         return view('welcome', $content);

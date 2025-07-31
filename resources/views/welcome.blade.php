@@ -39,5 +39,10 @@
         <div class="w-full bg-slate-700 text-white p-8">
             {!! $introduction !!}
         </div>
+
+        <!-- Gala Panel -->
+        <div class="w-full bg-slate-800 text-white p-8">
+            {!! $galaPanel !!}
+        </div>
     </div>
 @endsection
