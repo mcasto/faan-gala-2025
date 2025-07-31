@@ -13,6 +13,7 @@ class WelcomeController extends Controller
             'centered' => __('welcome.centered'),
             'lowerLeft' => __('welcome.lowerLeft'),
             'introduction' => __('welcome.introduction'),
+            'rightPanel' => __('welcome.rightPanel'),
         ];
 
         return view('welcome', $content);
