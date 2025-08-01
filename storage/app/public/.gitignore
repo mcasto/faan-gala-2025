@@ -1,5 +1,5 @@
 *
 !.gitignore
-!images/
-!videos/
+!images/**
+!videos/**
 .DS_Store
