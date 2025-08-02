@@ -3,7 +3,7 @@ return [
     'header' => 'GALA FAAN-TASTICA',
     'date' => 'November 22, 2025',
     'location' => 'Estancia Rosario',
-    'note' => '* Sponshorship includes cash donation and any direct costs of the event, including the Gala Bar (donation of spirits), printing costs, or entertainment costs.',
+    'note' => '* Sponsorship includes cash donation and any direct costs of the event, including the Gala Bar (donation of spirits), printing costs, or entertainment costs.',
     'levels' => [
         'mgm' => [
             'title' => 'MGM Studios',
