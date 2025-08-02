@@ -7,8 +7,7 @@
         <!-- Top Section: Left and Right Panels -->
         <div class="flex flex-col md:flex-row">
             <!-- Left Panel -->
-            <div class="w-full md:w-1/2 relative left-panel"
-                style="background-image: url('storage/images/page-01-background.jpeg');">
+            <div class="w-full md:w-1/2 relative left-panel" style="background-image: url('storage/images/fred-dog.jpg');">
                 <div class="absolute inset-0 bg-black/50"></div>
                 <div class="relative z-10 flex flex-col justify-between p-8 text-white min-h-[60vh] md:min-h-screen h-full">
                     <div class="self-start bg-black/30 p-4 rounded mb-4">
