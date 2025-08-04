@@ -2,7 +2,7 @@
 @section('title', 'Sponsorship Opportunities')
 @section('content')
     <div
-        style="background-image:url('storage/images/sponsorship-bg.jpeg'); background-size: cover; height: 100vh; display: flex; align-items: center; justify-content: center;">
+        style="background-image:url('storage/images/sponsorship-bg.jpeg'); background-size: cover; height: 100%; display: flex; align-items: center; justify-content: center;">
         <div class="text-left sponsorship-bg">
             <div class='sponsorship-banner' style='background-image: url("storage/images/sponsorship-banner.jpg")'>
                 <div class='flex flex-col  items-center justify-center h-full text-white p-4'
