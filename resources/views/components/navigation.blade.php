@@ -8,21 +8,43 @@
                 {{ __('navigation.home') }}
             </a>
 
-            <a href="{{ route('sponsorship-opportunities') }}"
-                class="px-4 py-2 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition
-                {{ Route::currentRouteName() === 'sponsorship' ? 'border-1 border-white font-bold underline' : '' }}">
-                {{ __('navigation.sponsorship') }}
-            </a>
+            <!-- Get Involved Dropdown -->
+            <div class="relative group">
+                <button
+                    class="px-4 py-2 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition flex items-center
+                    {{ in_array(Route::currentRouteName(), ['sponsorship-opportunities', 'join-us', 'meet-faantastics']) ? 'border-1 border-white font-bold underline' : '' }}">
+                    {{ __('navigation.get_involved') }}
+                    <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
 
-            <a href="{{ route('join-us') }}"
-                class="px-4 py-2 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition
-                {{ Route::currentRouteName() === 'join' ? 'border-1 border-white font-bold underline' : '' }}">
-                {{ __('navigation.join') }}
-            </a>
+                <!-- Dropdown Menu -->
+                <div
+                    class="absolute left-0 mt-2 w-64 bg-slate-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div class="py-2">
+                        <a href="{{ route('sponsorship-opportunities') }}"
+                            class="block px-4 py-2 text-white hover:bg-slate-700 transition
+                            {{ Route::currentRouteName() === 'sponsorship-opportunities' ? 'bg-slate-700 font-bold' : '' }}">
+                            {{ __('navigation.sponsorship') }}
+                        </a>
+                        <a href="{{ route('join-us') }}"
+                            class="block px-4 py-2 text-white hover:bg-slate-700 transition
+                            {{ Route::currentRouteName() === 'join-us' ? 'bg-slate-700 font-bold' : '' }}">
+                            {{ __('navigation.join') }}
+                        </a>
+                        <a href="{{ route('meet-faantastics') }}"
+                            class="block px-4 py-2 text-white hover:bg-slate-700 transition
+                            {{ Route::currentRouteName() === 'meet-faantastics' ? 'bg-slate-700 font-bold' : '' }}">
+                            {{ __('navigation.meet_faantastics') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
 
             <a href="{{ route('auction-palooza') }}"
                 class="px-4 py-2 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition
-                {{ Route::currentRouteName() === 'auction' ? 'border-1 border-white font-bold underline' : '' }}">
+                {{ Route::currentRouteName() === 'auction-palooza' ? 'border-1 border-white font-bold underline' : '' }}">
                 {{ __('navigation.auction') }}
             </a>
 
@@ -57,28 +79,38 @@
             </button>
 
             <!-- Mobile Navigation Links -->
-            <div class="flex flex-col space-y-4">
+            <div class="flex flex-col space-y-3">
                 <a href="{{ route('home') }}"
-                    class="px-4 py-3 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center
+                    class="px-4 py-2 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center
                     {{ Route::currentRouteName() === 'home' ? 'border border-white font-bold' : '' }}">
                     {{ __('navigation.home') }}
                 </a>
 
-                <a href="{{ route('sponsorship-opportunities') }}"
-                    class="px-4 py-3 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center
-                    {{ Route::currentRouteName() === 'sponsorship' ? 'border border-white font-bold' : '' }}">
-                    {{ __('navigation.sponsorship') }}
-                </a>
-
-                <a href="{{ route('join-us') }}"
-                    class="px-4 py-3 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center
-                    {{ Route::currentRouteName() === 'join' ? 'border border-white font-bold' : '' }}">
-                    {{ __('navigation.join') }}
-                </a>
+                <!-- Get Involved Section -->
+                <div class="space-y-2">
+                    <div class="px-4 py-2 text-yellow-400 font-semibold text-center border-b border-slate-600">
+                        {{ __('navigation.get_involved') }}
+                    </div>
+                    <a href="{{ route('sponsorship-opportunities') }}"
+                        class="px-4 py-2 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center text-sm
+                        {{ Route::currentRouteName() === 'sponsorship-opportunities' ? 'border border-white font-bold' : '' }}">
+                        {{ __('navigation.sponsorship') }}
+                    </a>
+                    <a href="{{ route('join-us') }}"
+                        class="px-4 py-2 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center text-sm
+                        {{ Route::currentRouteName() === 'join-us' ? 'border border-white font-bold' : '' }}">
+                        {{ __('navigation.join') }}
+                    </a>
+                    <a href="{{ route('meet-faantastics') }}"
+                        class="px-4 py-2 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center text-sm
+                        {{ Route::currentRouteName() === 'meet-faantastics' ? 'border border-white font-bold' : '' }}">
+                        {{ __('navigation.meet_faantastics') }}
+                    </a>
+                </div>
 
                 <a href="{{ route('auction-palooza') }}"
-                    class="px-4 py-3 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center
-                    {{ Route::currentRouteName() === 'auction' ? 'border border-white font-bold' : '' }}">
+                    class="px-4 py-2 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition text-center
+                    {{ Route::currentRouteName() === 'auction-palooza' ? 'border border-white font-bold' : '' }}">
                     {{ __('navigation.auction') }}
                 </a>
 

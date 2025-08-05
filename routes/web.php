@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\AuctionItemController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\JoinUsController;
+use App\Http\Controllers\MeetFaantasticsController;
 use App\Http\Controllers\SponsorshipController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,9 @@ Route::get('/sponsorship-opportunities', [SponsorshipController::class, 'show'])
 
 Route::get('/join-us', [JoinUsController::class, 'show'])
     ->name('join-us');
+
+Route::get('/meet-faantastics', [MeetFaantasticsController::class, 'show'])
+    ->name('meet-faantastics');
 
 Route::get('/auction-palooza', [AuctionPaloozaController::class, 'show'])
     ->name('auction-palooza');
