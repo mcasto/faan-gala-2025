@@ -9,19 +9,20 @@
             </a>
 
             <!-- Get Involved Dropdown -->
-            <div class="relative group">
-                <button
+            <div class="relative">
+                <button id="dropdownButton" onclick="toggleDropdown()"
                     class="px-4 py-2 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition flex items-center
                     {{ in_array(Route::currentRouteName(), ['sponsorship-opportunities', 'join-us', 'meet-faantastics']) ? 'border-1 border-white font-bold underline' : '' }}">
                     {{ __('navigation.get_involved') }}
-                    <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg id="dropdownArrow" class="ml-2 h-4 w-4 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
 
                 <!-- Dropdown Menu -->
-                <div
-                    class="absolute left-0 mt-2 w-64 bg-slate-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div id="dropdownMenu"
+                    class="absolute left-0 top-full w-64 bg-slate-800 rounded-md shadow-lg opacity-0 invisible transform scale-95 transition-all duration-200 z-50">
                     <div class="py-2">
                         <a href="{{ route('sponsorship-opportunities') }}"
                             class="block px-4 py-2 text-white hover:bg-slate-700 transition
@@ -142,5 +143,47 @@
             menu.classList.toggle('translate-x-full');
             menu.classList.toggle('translate-x-0');
         }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownMenu');
+            const arrow = document.getElementById('dropdownArrow');
+
+            if (dropdown.classList.contains('opacity-0')) {
+                // Open dropdown
+                dropdown.classList.remove('opacity-0', 'invisible', 'scale-95');
+                dropdown.classList.add('opacity-100', 'visible', 'scale-100');
+                arrow.style.transform = 'rotate(180deg)';
+            } else {
+                // Close dropdown
+                dropdown.classList.remove('opacity-100', 'visible', 'scale-100');
+                dropdown.classList.add('opacity-0', 'invisible', 'scale-95');
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('dropdownMenu');
+            const button = document.getElementById('dropdownButton');
+
+            if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.remove('opacity-100', 'visible', 'scale-100');
+                dropdown.classList.add('opacity-0', 'invisible', 'scale-95');
+                document.getElementById('dropdownArrow').style.transform = 'rotate(0deg)';
+            }
+        });
+
+        // Close dropdown when clicking on a link inside it
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownLinks = document.querySelectorAll('#dropdownMenu a');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const dropdown = document.getElementById('dropdownMenu');
+                    dropdown.classList.remove('opacity-100', 'visible', 'scale-100');
+                    dropdown.classList.add('opacity-0', 'invisible', 'scale-95');
+                    document.getElementById('dropdownArrow').style.transform = 'rotate(0deg)';
+                });
+            });
+        });
     </script>
 </nav>

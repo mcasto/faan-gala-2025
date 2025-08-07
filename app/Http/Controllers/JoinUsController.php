@@ -9,8 +9,9 @@ class JoinUsController extends Controller
     public function show()
     {
         $content = [
-            'upperRight' => __('join-us.upperRight'),
-            'rightPanel' => __('join-us.rightPanel'),
+            'rightPanelTop' => __('join-us.rightPanelTop'),
+            'rightPanelDonate' => __('join-us.rightPanelDonate'),
+            'rightPanelBottom' => __('join-us.rightPanelBottom'),
         ];
 
         return view('join-us', $content);
