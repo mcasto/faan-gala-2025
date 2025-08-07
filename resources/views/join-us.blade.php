@@ -22,7 +22,7 @@
                         <div class="relative">
                             <button id="oneTimeDonationBtn"
                                 class="w-full px-6 py-3 bg-yellow-500 text-slate-800 font-semibold rounded-lg hover:bg-yellow-600 hover:text-white transition duration-300 flex items-center justify-between">
-                                <span>One-Time Donation</span>
+                                <span>{{ __('join-us.one_time_donation') }}</span>
                                 <svg id="oneTimeArrow" class="ml-2 h-4 w-4 transition-transform" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -37,22 +37,22 @@
                                     <button
                                         class="donation-modal-btn w-full px-4 py-2 text-left text-yellow-500 hover:bg-slate-700 hover:text-white transition"
                                         data-amount="25" data-url="https://www.paypal.com/ncp/payment/86E6KQLSLVF5G">
-                                        $25
+                                        {{ __('join-us.donate_25') }}
                                     </button>
                                     <button
                                         class="donation-modal-btn w-full px-4 py-2 text-left text-yellow-500 hover:bg-slate-700 hover:text-white transition"
                                         data-amount="50" data-url="https://www.paypal.com/ncp/payment/7EAD2B6AA2F64">
-                                        $50
+                                        {{ __('join-us.donate_50') }}
                                     </button>
                                     <button
                                         class="donation-modal-btn w-full px-4 py-2 text-left text-yellow-500 hover:bg-slate-700 hover:text-white transition"
                                         data-amount="100" data-url="https://www.paypal.com/ncp/payment/SVW7PUMW8AHK8">
-                                        $100
+                                        {{ __('join-us.donate_100') }}
                                     </button>
                                     <button
                                         class="donation-modal-btn w-full px-4 py-2 text-left text-yellow-500 hover:bg-slate-700 hover:text-white transition"
                                         data-amount="custom" data-url="https://www.paypal.com/ncp/payment/AB3JPMNYXD6DA">
-                                        You Choose
+                                        {{ __('join-us.you_choose') }}
                                     </button>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
 
                         <button id="monthlyDonationBtn"
                             class="px-6 py-3 bg-yellow-500 text-slate-800 font-semibold rounded-lg hover:bg-yellow-600 hover:text-white transition duration-300">
-                            $20 Monthly Donation (for 12 months)
+                            {{ __('join-us.monthly_donation') }}
                         </button>
                     </div>
                     <hr class='my-4' />
@@ -74,12 +74,11 @@
     <div id="monthlyDonationModal" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden">
         <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
             <div class="flex justify-between items-center mb-4">
-                <h3 class="text-lg font-semibold text-slate-800">Monthly Donation - $20/month</h3>
+                <h3 class="text-lg font-semibold text-slate-800">{{ __('join-us.monthly_donation_modal_title') }}</h3>
                 <button id="closeModalBtn" class="text-slate-600 hover:text-slate-800 text-xl font-bold">&times;</button>
             </div>
             <div class="mb-4">
-                <p class="text-slate-600 text-sm mb-4">Set up your recurring monthly donation of $20 for 12 months to
-                    support FAAN.</p>
+                <p class="text-slate-600 text-sm mb-4">{{ __('join-us.monthly_donation_description') }}</p>
                 <div id="paypal-button-container-P-00T03963TT926993UNCKLB3Q"></div>
             </div>
         </div>
@@ -94,7 +93,7 @@
                     class="text-slate-600 hover:text-slate-800 text-xl font-bold">&times;</button>
             </div>
             <div class="mb-4">
-                <p class="text-slate-600 text-sm mb-4">Complete your donation through PayPal.</p>
+                <p class="text-slate-600 text-sm mb-4">{{ __('join-us.paypal_description') }}</p>
                 <div id="paypal-form-container">
                     <!-- PayPal form will be inserted here -->
                 </div>
@@ -106,6 +105,18 @@
         src="https://www.paypal.com/sdk/js?client-id=ATHisUp0ai56Xleqxu6JdHOY-u0zbSxic4TB7SSm2Tefzgv1dmZJkN7ghlPMApTSmeIjKQEu_03oipI-&vault=true&intent=subscription"
         data-sdk-integration-source="button-factory"></script>
     <script>
+        // Language strings for JavaScript
+        const lang = {
+            donationModalTitle25: '{{ __('join-us.donation_modal_title_25') }}',
+            donationModalTitle50: '{{ __('join-us.donation_modal_title_50') }}',
+            donationModalTitle100: '{{ __('join-us.donation_modal_title_100') }}',
+            donationModalTitleCustom: '{{ __('join-us.donation_modal_title_custom') }}',
+            donate25: '{{ __('join-us.donate_25') }}',
+            donate50: '{{ __('join-us.donate_50') }}',
+            donate100: '{{ __('join-us.donate_100') }}',
+            chooseAmount: '{{ __('join-us.choose_amount') }}',
+        };
+
         // Modal functionality
         const monthlyDonationBtn = document.getElementById('monthlyDonationBtn');
         const monthlyDonationModal = document.getElementById('monthlyDonationModal');
@@ -131,16 +142,27 @@
                 const paypalUrl = this.getAttribute('data-url');
 
                 // Set modal title
+                let modalTitle, buttonValue;
                 if (amount === 'custom') {
-                    donationModalTitle.textContent = 'Choose Your Donation Amount';
-                } else {
-                    donationModalTitle.textContent = `Donate $${amount}`;
+                    modalTitle = lang.donationModalTitleCustom;
+                    buttonValue = lang.chooseAmount;
+                } else if (amount === '25') {
+                    modalTitle = lang.donationModalTitle25;
+                    buttonValue = lang.donate25;
+                } else if (amount === '50') {
+                    modalTitle = lang.donationModalTitle50;
+                    buttonValue = lang.donate50;
+                } else if (amount === '100') {
+                    modalTitle = lang.donationModalTitle100;
+                    buttonValue = lang.donate100;
                 }
+
+                donationModalTitle.textContent = modalTitle;
 
                 // Create PayPal form and insert into modal
                 const paypalForm = `
                     <form action="${paypalUrl}" method="post" target="_blank" style="display: inline-grid; justify-items: center; align-content: start; gap: 0.5rem;">
-                        <input type="submit" value="${amount === 'custom' ? 'Choose Amount' : `Donate $${amount}`}"
+                        <input type="submit" value="${buttonValue}"
                                style="text-align: center; border: none; border-radius: 0.25rem; min-width: 11.625rem; padding: 0 2rem; height: 2.625rem; font-weight: bold; background-color: #ffd140; color: #000000; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 1rem; line-height: 1.25rem; cursor: pointer;" />
                         <img src="https://www.paypalobjects.com/images/Debit_Credit.svg" alt="cards" />
                         <section style="font-size: 0.75rem;">
