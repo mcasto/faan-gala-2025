@@ -1,0 +1,131 @@
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <fieldset class="p-2">
+    <legend>Donor Information</legend>
+    <input
+      type="text"
+      name="donor_name"
+      placeholder="Donor or Business"
+      required
+      class="w-full p-2 mb-4 border border-gray-300 rounded"
+    />
+  </fieldset>
+
+  <fieldset class="p-2">
+    <legend>Contact Name</legend>
+    <input
+      type="text"
+      name="individual_name"
+      placeholder="Individual Name"
+      required
+      class="w-full p-2 mb-4 border border-gray-300 rounded"
+    />
+  </fieldset>
+
+  <fieldset class="p-2">
+    <legend>Email Address</legend>
+    <input
+      type="email"
+      name="email"
+      placeholder="Email"
+      required
+      class="w-full p-2 mb-4 border border-gray-300 rounded"
+    />
+  </fieldset>
+
+  <fieldset class="p-2">
+    <legend>Phone Number</legend>
+    <input
+      type="tel"
+      name="phone"
+      placeholder="Phone"
+      required
+      class="w-full p-2 mb-4 border border-gray-300 rounded"
+    />
+  </fieldset>
+
+  <fieldset class="p-2">
+    <legend>Address</legend>
+    <input
+      type="text"
+      name="address"
+      placeholder="Address"
+      required
+      class="w-full p-2 mb-4 border border-gray-300 rounded"
+    />
+  </fieldset>
+
+  <fieldset class="p-2">
+    <legend>Address Line 2 (optional)</legend>
+    <input
+      type="text"
+      name="address_2"
+      placeholder="Address Line 2 (optional)"
+      class="w-full p-2 mb-4 border border-gray-300 rounded"
+    />
+  </fieldset>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+  <fieldset class="p-2">
+    <legend>Name of Item</legend>
+    <input
+      type="text"
+      name="item_name"
+      placeholder="Name of Item"
+      required
+      class="w-full p-2 mb-4 border border-gray-300 rounded"
+    />
+  </fieldset>
+
+  <fieldset class="p-2">
+    <legend>Value of Item</legend>
+    <input
+      type="number"
+      name="item_value"
+      step="0.01"
+      placeholder="Value of the Item"
+      class="w-full p-2 mb-4 border border-gray-300 rounded"
+    />
+  </fieldset>
+
+  <fieldset class="p-2 md:col-span-2 lg:col-span-1">
+    <legend>Item Image</legend>
+    <input
+      type="file"
+      name="item_image"
+      accept="image/*"
+      class="w-full p-2 mb-4 border border-gray-300 rounded"
+    />
+  </fieldset>
+</div>
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <fieldset class="p-2">
+    <legend>Description of the Item</legend>
+    <textarea
+      name="description"
+      rows="4"
+      placeholder="Description of the Item"
+      class="w-full p-2 mb-4 border border-gray-300 rounded"
+    ></textarea>
+  </fieldset>
+
+  <fieldset class="p-2">
+    <legend>Terms & Conditions (if applicable)</legend>
+    <textarea
+      name="terms"
+      rows="4"
+      placeholder="Terms & Conditions (if applicable)"
+      class="w-full p-2 mb-4 border border-gray-300 rounded"
+    ></textarea>
+  </fieldset>
+</div>
+
+<div class="flex justify-end mt-6 p-2">
+  <button
+    type="submit"
+    class="px-4 py-2 rounded bg-yellow-500 text-slate-800 font-semibold hover:bg-yellow-600 hover:text-white transition"
+  >
+    Submit Auction Item
+  </button>
+</div>
