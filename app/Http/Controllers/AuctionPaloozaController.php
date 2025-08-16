@@ -60,9 +60,24 @@ class AuctionPaloozaController extends Controller
 
         $item = AuctionItem::create($rec);
 
-        // mc-todo: send email notification and/or add to monday.com
+        // add to monday.com
         $monday = new MondayService();
-        $monday->addItem('Gala Auction Items', $item->toArray());
+        $response = $monday->addItem('Gala Auction Items', $item->toArray());
+
+        if (isset($response->status) && $response->status == 'error') {
+            // Error adding item to monday, return error information
+            return response()->json(['status' => 'error', 'message' => $response['message'], 'monday_details' => $response['errors']]);
+        }
+
+        // upload the image to monday.com
+        $id = $response->id;
+        $filePath = Storage::disk('local')->path($auctionItemPath);
+        $response = $monday->attachFile(itemId: $id, fieldName: 'Item Image', filePath: $filePath);
+
+        if (isset($response->errors)) {
+            // Error uploading image to monday, return error information
+            return response()->json(['status' => 'error', 'message' => 'Monday.com API error', 'monday_details' => $response->errors]);
+        }
 
         // Everything done, return ok
         return response()->json(['status' => 'ok']);

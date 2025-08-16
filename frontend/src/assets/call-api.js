@@ -43,6 +43,9 @@ export default ({
           message: response.message,
           html: true,
         });
+
+        console.error({ mondayError: response });
+
         return false;
       }
       return response;

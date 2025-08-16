@@ -101,8 +101,6 @@ const routes = [
             method: "get",
           });
 
-          console.log({ response });
-
           store.auctionPalooza = response;
         },
         meta: {

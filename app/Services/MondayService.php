@@ -2,12 +2,14 @@
 
 namespace App\Services;
 
+use CURLFile;
 use Illuminate\Support\Str;
 
 class MondayService
 {
     private $token;
     private $apiUrl = 'https://api.monday.com/v2';
+    private $columns;
 
     /**
      * MondayService constructor.
@@ -27,7 +29,7 @@ class MondayService
         return [
             'Content-Type: application/json',
             'Authorization: ' . $this->token,
-            'API-Version: 2023-07'
+            'API-Version: 2024-04'
         ];
     }
 
@@ -140,6 +142,7 @@ class MondayService
         }
 
         $info = $this->getBoardInfo($boardId);
+        $this->columns = collect($info->columns);
 
         $column_builder = collect($info->columns)
             ->map(function ($column) {
@@ -168,7 +171,7 @@ class MondayService
         $column_values_json = json_encode($column_values, JSON_UNESCAPED_UNICODE);
         $column_values_escaped = addslashes($column_values_json); // Escapes inner quotes for GraphQL
 
-        // Now build the query
+        // build the query
         $query = $this->getQuery('add-item');
         $query = str_replace('BOARD_ID', $boardId, $query);
         $query = str_replace('ITEM_NAME', '"' . $item['id'] . '"', $query);
@@ -185,10 +188,6 @@ class MondayService
 
         $context = stream_context_create($options);
         $result = file_get_contents($this->apiUrl, false, $context);
-
-        // Log the final query for debugging
-        logger()->debug(['result' => $result]);
-
 
         if ($result === false) {
             return [
@@ -218,5 +217,43 @@ class MondayService
         }
 
         return $response->data->create_item;
+    }
+
+    public function attachFile($itemId, $fieldName, $filePath)
+    {
+        $fileMime = mime_content_type($filePath);
+
+        $columnId = $this->columns->firstWhere('title', $fieldName)->id ?? null;
+
+        // build the query
+        $query = $this->getQuery('upload-file');
+        $query = str_replace('ITEM_ID', $itemId, $query);
+        $query = str_replace('COLUMN_ID', $columnId, $query);
+
+        $variables = '{}'; // The file will be mapped in the next step
+        $map = '{"file":"variables.file"}';
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, [
+            CURLOPT_URL => "$this->apiUrl/file",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_HTTPHEADER => [
+                'Authorization: ' . $this->token,
+                'API-Version: 2024-04'
+            ],
+            CURLOPT_POSTFIELDS => [
+                'query' => $query,
+                'variables' => $variables,
+                'map' => $map,
+                'file' => new CURLFile($filePath, $fileMime)
+            ]
+        ]);
+
+        $response = curl_exec($curl);
+        curl_close($curl);
+
+        return json_decode($response);
     }
 }
