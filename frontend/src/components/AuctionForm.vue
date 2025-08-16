@@ -133,6 +133,7 @@
       <div class="col-12 col-md-6">
         <div class="q-pa-sm">
           <q-uploader
+            style="height: 300px;"
             url="/api/auction-item-image"
             ref="itemImageUploader"
             dark
@@ -197,7 +198,7 @@
 </template>
 
 <script setup>
-import { Notify, uid } from "quasar";
+import { Loading, Notify, uid } from "quasar";
 import callApi from "src/assets/call-api";
 import { useStore } from "src/stores/store";
 import { ref } from "vue";
@@ -208,20 +209,22 @@ const itemImageUploader = ref(null);
 
 const formData = ref({
   image_id: uid(),
-  donor_name: null,
-  contact_name: null,
-  email: null,
-  phone: null,
-  address: null,
+  donor_name: "donor",
+  contact_name: "contact",
+  email: "email@address.com",
+  phone: "1111111111",
+  address: "address",
   address_2: null,
-  item_name: null,
+  item_name: "name",
   item_value: 0,
   item_image: null,
-  description: null,
+  description: "desc",
   terms_and_conditions: null,
 });
 
 const handleSubmit = async () => {
+  Loading.show({ delay: 100 });
+
   if (!formData.value.item_image) {
     Notify.create({
       type: "negative",
@@ -237,27 +240,31 @@ const handleSubmit = async () => {
   });
 
   if (response) {
+    console.log({ response });
+
     Notify.create({
       type: "positive",
       message: "Auction Item Submitted Successfully",
     });
 
-    formData.value = {
-      image_id: uid(),
-      donor_name: null,
-      contact_name: null,
-      email: null,
-      phone: null,
-      address: null,
-      address_2: null,
-      item_name: null,
-      item_value: 0,
-      item_image: null,
-      description: null,
-      terms_and_conditions: null,
-    };
+    // formData.value = {
+    //   image_id: uid(),
+    //   donor_name: null,
+    //   contact_name: null,
+    //   email: null,
+    //   phone: null,
+    //   address: null,
+    //   address_2: null,
+    //   item_name: null,
+    //   item_value: 0,
+    //   item_image: null,
+    //   description: null,
+    //   terms_and_conditions: null,
+    // };
 
     itemImageUploader.value.reset();
   }
+
+  Loading.hide();
 };
 </script>

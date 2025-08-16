@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\AuctionItem;
+use App\Services\MondayService;
 
 class AuctionPaloozaController extends Controller
 {
@@ -57,9 +58,11 @@ class AuctionPaloozaController extends Controller
 
         $rec['item_image_path'] = $auctionItemPath;
 
-        AuctionItem::create($rec);
+        $item = AuctionItem::create($rec);
 
         // mc-todo: send email notification and/or add to monday.com
+        $monday = new MondayService();
+        $monday->addItem('Gala Auction Items', $item->toArray());
 
         // Everything done, return ok
         return response()->json(['status' => 'ok']);
