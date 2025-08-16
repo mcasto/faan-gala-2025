@@ -209,16 +209,16 @@ const itemImageUploader = ref(null);
 
 const formData = ref({
   image_id: uid(),
-  donor_name: "donor",
-  contact_name: "contact",
-  email: "email@address.com",
-  phone: "1111111111",
-  address: "address",
+  donor_name: null,
+  contact_name: null,
+  email: null,
+  phone: null,
+  address: null,
   address_2: null,
-  item_name: "name",
+  item_name: null,
   item_value: 0,
   item_image: null,
-  description: "desc",
+  description: null,
   terms_and_conditions: null,
 });
 
@@ -247,20 +247,20 @@ const handleSubmit = async () => {
       message: "Auction Item Submitted Successfully",
     });
 
-    // formData.value = {
-    //   image_id: uid(),
-    //   donor_name: null,
-    //   contact_name: null,
-    //   email: null,
-    //   phone: null,
-    //   address: null,
-    //   address_2: null,
-    //   item_name: null,
-    //   item_value: 0,
-    //   item_image: null,
-    //   description: null,
-    //   terms_and_conditions: null,
-    // };
+    formData.value = {
+      image_id: uid(),
+      donor_name: null,
+      contact_name: null,
+      email: null,
+      phone: null,
+      address: null,
+      address_2: null,
+      item_name: null,
+      item_value: 0,
+      item_image: null,
+      description: null,
+      terms_and_conditions: null,
+    };
 
     itemImageUploader.value.reset();
   }

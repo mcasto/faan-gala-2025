@@ -11,7 +11,7 @@
             <template v-for="item of nav" :key="item.name">
               <q-btn
                 v-if="!item.meta.section && !item.meta.dropdown"
-                :label="item.meta.label"
+                :label="item.meta.label[store.language]"
                 :to="item.path"
                 :name="item.name"
                 class="q-mx-sm text-black"
@@ -30,7 +30,7 @@
                 @click="tab = item.name"
               >
                 <span :class="item.name === tab ? 'nav-underline' : ''">{{
-                  item.meta.label
+                  item.meta.label[store.language]
                 }}</span>
 
                 <q-menu dark>
@@ -45,7 +45,7 @@
                     >
                       <q-item-section>
                         <q-item-label>
-                          {{ subItem.meta.label }}
+                          {{ subItem.meta.label[store.language] }}
                         </q-item-label>
                       </q-item-section>
                     </q-item>
@@ -83,7 +83,7 @@
           <template v-for="item of nav" :key="item.name">
             <q-btn
               v-if="!item.meta.section && !item.meta.dropdown"
-              :label="item.meta.label"
+              :label="item.meta.label[store.language]"
               :to="item.path"
               :name="item.name"
               class="q-mx-sm text-black"
@@ -104,7 +104,7 @@
               style="width: 75%;"
             >
               <span :class="item.name === tab ? 'nav-underline' : ''">{{
-                item.meta.label
+                item.meta.label[store.language]
               }}</span>
 
               <q-menu dark>
@@ -119,7 +119,7 @@
                   >
                     <q-item-section>
                       <q-item-label>
-                        {{ subItem.meta.label }}
+                        {{ subItem.meta.label[store.language] }}
                       </q-item-label>
                     </q-item-section>
                   </q-item>

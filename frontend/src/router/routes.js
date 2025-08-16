@@ -13,7 +13,7 @@ const routes = [
           const store = useStore();
           store.welcome = await callApi({ path: "/welcome", method: "get" });
         },
-        meta: { label: "Home", order: 1 },
+        meta: { label: { en: "Home", es: "Inicio" }, order: 1 },
         name: "home",
       },
       {
@@ -31,7 +31,10 @@ const routes = [
               });
             },
             meta: {
-              label: "Sponsorship Opportunities",
+              label: {
+                en: "Sponsorship Opportunities",
+                es: "Oportunidades de Patrocinio",
+              },
               section: "get-involved",
               order: 3,
             },
@@ -48,7 +51,14 @@ const routes = [
                 method: "get",
               });
             },
-            meta: { label: "Join Us", section: "get-involved", order: 4 },
+            meta: {
+              label: {
+                en: "Join Us",
+                es: "Únete a Nosotros",
+              },
+              section: "get-involved",
+              order: 4,
+            },
             name: "join-us",
           },
           {
@@ -63,14 +73,21 @@ const routes = [
               });
             },
             meta: {
-              label: "Meet the Faantastics",
+              label: {
+                en: "Meet the Faantastics",
+                es: "Conoce a los Faantásticos",
+              },
               section: "get-involved",
               order: 5,
             },
             name: "meet-faantastics",
           },
         ],
-        meta: { label: "Get Involved", dropdown: true, order: 2 },
+        meta: {
+          label: { en: "Get Involved", es: "Involúcrate" },
+          dropdown: true,
+          order: 2,
+        },
         name: "get-involved",
       },
       {
@@ -88,7 +105,10 @@ const routes = [
 
           store.auctionPalooza = response;
         },
-        meta: { label: "Auction Palooza", order: 6 },
+        meta: {
+          label: { en: "Auction Palooza", es: "Subasta Palooza" },
+          order: 6,
+        },
         name: "auction-palooza",
       },
     ],
