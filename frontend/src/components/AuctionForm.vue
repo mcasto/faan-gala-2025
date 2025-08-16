@@ -240,8 +240,6 @@ const handleSubmit = async () => {
   });
 
   if (response) {
-    console.log({ response });
-
     Notify.create({
       type: "positive",
       message: "Auction Item Submitted Successfully",
