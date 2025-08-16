@@ -7,6 +7,7 @@
 ✔ Update the spanish for all the pages after I get the layout for english done @done(25-08-15 21:48)
 
 ☐ test production site
+☐ set up cron on production server to run scheduled tasks
 
 add other donation methods:
     ☐ In join-us.php, add labels/urls for other methods
