@@ -13,10 +13,10 @@ Route::group(['prefix' => '{lang}', 'middleware' => 'api'], function () {
         ->name('api.home');
 
     Route::get('/auction-palooza', [AuctionPaloozaController::class, 'index'])
-        ->name('api.auction-palooza');
+        ->name('api.auction-palooza.index');
 
     Route::post('/auction-palooza', [AuctionPaloozaController::class, 'store'])
-        ->name('api.auction-palooza');
+        ->name('api.auction-palooza.store');
 
     Route::get('/join-us', [JoinUsController::class, 'index'])
         ->name('api.join-us');
