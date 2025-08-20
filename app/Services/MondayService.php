@@ -122,7 +122,7 @@ class MondayService
         }
 
         // get board name
-        $board = collect($boards['boards'])->firstWhere('name', 'Gala Auction Items');
+        $board = collect($boards['boards'])->firstWhere('name', $name);
 
         return $board ? $board->id : false;
     }

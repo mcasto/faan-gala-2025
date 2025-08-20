@@ -17,6 +17,16 @@ const routes = [
         name: "home",
       },
       {
+        path: "tickets",
+        component: () => import("pages/TicketsPage.vue"),
+        beforeEnter: async () => {
+          const store = useStore();
+          store.tickets = await callApi({ path: "/tickets", method: "get" });
+        },
+        meta: { label: { en: "Tickets", es: "Entradas" }, order: 1.5 },
+        name: "tickets",
+      },
+      {
         path: "get-involved",
         children: [
           {

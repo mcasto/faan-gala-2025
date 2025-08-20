@@ -11,6 +11,7 @@ export const useStore = defineStore(
       language: ref("en"),
       meetFaantastics: ref(null),
       sopp: ref(null),
+      tickets: ref(null),
       welcome: ref(null),
     };
     const getters = {};
