@@ -1,13 +1,13 @@
 [
   {
     "id": "ambience",
-    "name": "Ambience",
+    "name": "Ambiente",
     "path": "/images/gallery-2023/ambience",
     "images": ["IMG_3984.jpg", "IMG_3985.jpg", "IMG_4001.jpg"]
   },
   {
     "id": "entertainers",
-    "name": "Entertainers",
+    "name": "Artistas",
     "path": "/images/gallery-2023/entertainers",
     "images": [
       "IMG_3798.jpg",
@@ -39,7 +39,7 @@
   },
   {
     "id": "guests",
-    "name": "Guests",
+    "name": "Invitados",
     "path": "/images/gallery-2023/guests",
     "images": [
       "IMG_3786.jpg",
@@ -178,7 +178,7 @@
   },
   {
     "id": "live-auction",
-    "name": "Live Auction",
+    "name": "Subasta en Vivo",
     "path": "/images/gallery-2023/live-auction",
     "images": [
       "IMG_3961.jpg",

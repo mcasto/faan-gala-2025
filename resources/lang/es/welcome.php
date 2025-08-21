@@ -1,4 +1,5 @@
 <?php
+
 return [
     'upperLeft' => file_get_contents(__DIR__ . '/html-blocks/welcome/upper-left.html'),
     'centered' => file_get_contents(__DIR__ . '/html-blocks/welcome/centered.html'),
