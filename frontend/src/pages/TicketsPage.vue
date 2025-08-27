@@ -3,11 +3,7 @@
     <!-- Header Section -->
     <div class="header-section">
       <h1 class="title">{{ store.tickets?.header || "Registration Form" }}</h1>
-      <p class="subtitle">
-        {{
-          store.tickets?.subheader || "Please fill out the form below to RSVP"
-        }}
-      </p>
+      <p class="subtitle" v-html="store.tickets?.subheader"></p>
     </div>
 
     <!-- Main Form -->
@@ -139,13 +135,15 @@
         <!-- Guest Limit Reached Message -->
         <div class="guest-limit-reached" v-else>
           <q-icon name="check_circle" color="positive" />
-          <span>Maximum number of guests reached</span>
+          <span>{{ maximum_guests }}</span>
         </div>
       </div>
 
       <!-- Additional Information -->
       <div class="form-section">
-        <h3 class="section-title">Additional Information</h3>
+        <h3 class="section-title">
+          {{ store.tickets?.additional_information }}
+        </h3>
 
         <q-input
           v-model="formData.table_number_or_ambassador"
@@ -230,6 +228,8 @@
         />
       </div>
     </q-form>
+
+    <rsvp-thanks :num-tickets="formData.quantity" v-model="showThanks" />
   </div>
 </template>
 
@@ -238,9 +238,12 @@ import { ref, reactive, computed } from "vue";
 import { useStore } from "src/stores/store";
 import { Loading, Notify } from "quasar";
 import callApi from "src/assets/call-api";
+import RsvpThanks from "src/components/RsvpThanks.vue";
 
 const store = useStore();
 const submitting = ref(false);
+
+const showThanks = ref(false);
 
 // Initialize form data
 let formData = reactive({
@@ -298,11 +301,9 @@ async function onSubmit() {
   });
 
   if (response.status == "ok") {
-    Notify.create({
-      type: "positive",
-      message: "Your RSVP has been submitted successfully!",
-      timeout: 3000,
-    });
+    // mc-todo: route to a thank you page
+    // "we'll see you at the Gala & be in touch soon regarding your tickets"
+    showThanks.value = true;
 
     formData = {
       purchaser_name: "",

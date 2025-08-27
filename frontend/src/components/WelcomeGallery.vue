@@ -1,16 +1,19 @@
 <template>
   <div class="bg-secondary q-py-xl">
     <div class="gallery-banner">
-      <h2 class="text-center playfair-font text-bold">
+      <div
+        class="playfair-font text-bold text-center"
+        :class="Screen.lt.md ? 'text-h5' : 'text-h2'"
+      >
         Gala FAAN-tastica 2023
-      </h2>
+      </div>
     </div>
 
     <div class="flex justify-center q-mt-sm">
       <template v-for="section in store.welcome.galaImages" :key="section.id">
         <q-btn
           :label="section.name"
-          class="q-mx-sm text-black"
+          class="q-mx-sm text-black q-my-xs"
           :class="section.id === galaSection ? 'nav-underline' : ''"
           :color="section.id === galaSection ? 'amber-8' : 'warning'"
           @click="changeSection(section.id)"
@@ -42,7 +45,7 @@
 
         <div class="row q-col-gutter-md">
           <div
-            class="col-4"
+            class="col-12 col-md-4"
             v-for="(image, index) in paginatedImages"
             :key="index"
           >
@@ -63,6 +66,7 @@
 </template>
 
 <script setup>
+import { Screen } from "quasar";
 import { useStore } from "src/stores/store";
 import { computed, ref, watch } from "vue";
 

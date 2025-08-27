@@ -36,7 +36,7 @@ return [
             'hint' => 'Algunas mesas tienen un Embajador/Tema de Película. ID si se conoce.'
         ],
         'vegetarian_requirement' => [
-            'label' => 'Requerimiento Vegetariano',
+            'label' => "Requisito vegetariano: si no eres vegetariano, escribe «ninguno» o deja el campo en blanco.",
             'hint' => 'El plato principal será una combinación de res y pollo. Si prefiere vegetariano, por favor note sus preferencias/restricciones.'
         ],
         'note_from_rsvp' => [
@@ -48,9 +48,11 @@ return [
         ],
     ],
     'header' => 'Formulario de Registro',
-    'subheader' => 'Por favor, complete el formulario a continuación para confirmar su asistencia (RSVP)',
+    'subheader' => file_get_contents(__DIR__ . '/html-blocks/ticket/subheader.html'),
     'guest-form' => [
         'name' => 'Nombre del Invitado',
         'email' => 'Email del Invitado',
-    ]
+    ],
+    'additional_information' => 'Información adicional (opcional)',
+    'maximum_guests' => 'Se ha alcanzado el número máximo de invitados.'
 ];

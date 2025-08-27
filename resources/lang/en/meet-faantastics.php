@@ -8,8 +8,8 @@ return [
         'text' => '<p class="text-subtitle1">Coming soon: Board member photos, short bios, and inspiring quotes from our dedicated board members who make FAAN\'s mission possible.</p>'
     ],
     'teamSection' => [
-        'header' => 'Shelter Team & Volunteers',
-        'text' => '<p class="text-subtitle1">Coming soon: Meet our amazing shelter team and volunteers who work tirelessly to care for animals in need every day.</p>'
+        'header' => 'Sanctuary Team & Volunteers',
+        'text' => '<p class="text-subtitle1">Coming soon: Meet our amazing sanctuary team and volunteers who work tirelessly to care for animals in need every day.</p>'
     ],
     'committeeSection' => [
         'header' => '2025 Gala Committee',

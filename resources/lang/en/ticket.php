@@ -36,7 +36,7 @@ return [
             'hint' => 'Some tables have an Ambassador/Movie Theme. ID if known.'
         ],
         'vegetarian_requirement' => [
-            'label' => 'Vegetarian Requirement',
+            'label' => "Vegetarian Requirement--if you're not a vegetarian, enter 'none' or leave this field blank",
             'hint' => 'The entree will be a combination of beef and chicken. If you prefer vegetarian, pleaase note your preferences/restrictions.'
         ],
         'note_from_rsvp' => [
@@ -48,9 +48,11 @@ return [
         ],
     ],
     'header' => 'Registration Form',
-    'subheader' => 'Please fill out the form below to RSVP',
+    'subheader' => file_get_contents(__DIR__ . '/html-blocks/ticket/subheader.html'),
     'guest-form' => [
         'name' => 'Guest Name',
         'email' => 'Guest Email',
-    ]
+    ],
+    'additional_information' => 'Additional Information (Optional)',
+    'maximum_guests' => 'Maximum number of guests reached'
 ];

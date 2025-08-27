@@ -82,7 +82,8 @@
     background-image: url('/images/gallery-2023/gallery-banner.jpg');
     background-position: center;
 
-    h2 {
+    .text-h2,
+    .text-h5 {
         line-height: 20vh;
         color: white;
         text-shadow: hsl(0, 0%, 0%) 1px 1px 0, hsl(0, 0%, 0%) -1px -1px 0, hsl(0, 0%, 0%) 1px -1px 0, hsl(0, 0%, 0%) -1px 1px 0;
