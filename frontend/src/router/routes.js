@@ -71,27 +71,27 @@ const routes = [
             },
             name: "join-us",
           },
-          {
-            path: "meet-faantastics",
-            component: () => import("pages/MeetFaantasticsPage.vue"),
-            beforeEnter: async () => {
-              const store = useStore();
+          // {
+          //   path: "meet-faantastics",
+          //   component: () => import("pages/MeetFaantasticsPage.vue"),
+          //   beforeEnter: async () => {
+          //     const store = useStore();
 
-              store.meetFaantastics = await callApi({
-                path: "/meet-faantastics",
-                method: "get",
-              });
-            },
-            meta: {
-              label: {
-                en: "Meet the Faantastics",
-                es: "Conoce a los Faantásticos",
-              },
-              section: "get-involved",
-              order: 5,
-            },
-            name: "meet-faantastics",
-          },
+          //     store.meetFaantastics = await callApi({
+          //       path: "/meet-faantastics",
+          //       method: "get",
+          //     });
+          //   },
+          //   meta: {
+          //     label: {
+          //       en: "Meet the Faantastics",
+          //       es: "Conoce a los Faantásticos",
+          //     },
+          //     section: "get-involved",
+          //     order: 5,
+          //   },
+          //   name: "meet-faantastics",
+          // },
         ],
         meta: {
           label: { en: "Get Involved", es: "Involúcrate" },

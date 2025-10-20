@@ -12,6 +12,15 @@
     <div class="col-12">
       <welcome-gallery></welcome-gallery>
     </div>
+    <div class="col-12 bg-secondary text-center">
+      <div class="text-subtitle2 text-white">
+        Thanks Video from 2023 Gala FAAN-tastica
+      </div>
+      <video width="640" height="360" controls>
+        <source src="/videos/highlight-vid.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
 </template>
 
