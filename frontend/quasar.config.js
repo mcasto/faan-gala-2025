@@ -74,6 +74,10 @@ export default defineConfig((/* ctx */) => {
           target: "http://faan-gala.test",
           changeOrigin: true,
         },
+        "/storage": {
+          target: "http://faan-gala.test",
+          changeOrigin: true,
+        },
       },
     },
 
