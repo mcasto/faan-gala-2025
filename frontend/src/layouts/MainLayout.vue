@@ -70,7 +70,7 @@
             flat
             @click="store.drawer = !store.drawer"
           ></q-btn>
-          <q-btn icon="menu" v-else flat>
+          <q-btn icon="menu" v-else flat label="MENU">
             <q-menu dark>
               <q-list dense separator dark class="bg-primary">
                 <q-item
@@ -78,12 +78,23 @@
                   :key="item.name"
                   clickable
                   :to="{ name: item.name }"
-                  active-class="text-black bg-grey-3"
+                  active-class="text-black bg-blue-grey-3"
                   exact
                 >
                   <q-item-section>
                     <q-item-label>
                       {{ item.meta.label[store.language] }}
+                    </q-item-label>
+                  </q-item-section>
+                </q-item>
+
+                <q-item clickable @click="toggleLanguage">
+                  <q-item-section side>
+                    <q-icon name="mdi-web"></q-icon>
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label>
+                      {{ languageButtonLabel }}
                     </q-item-label>
                   </q-item-section>
                 </q-item>

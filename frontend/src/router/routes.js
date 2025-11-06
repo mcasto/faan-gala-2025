@@ -19,6 +19,14 @@ const routes = [
       {
         path: "2025-auction",
         component: () => import("pages/2025Auction.vue"),
+        beforeEnter: async () => {
+          const store = useStore();
+
+          store.auction2025 = await callApi({
+            path: "/2025-auction",
+            method: "get",
+          });
+        },
         meta: {
           label: { en: "2025 Auction", es: "Subasta de 2025" },
           order: 1,
@@ -28,6 +36,13 @@ const routes = [
       {
         path: "ungala-tickets",
         component: () => import("pages/UgnalaGalaTickets.vue"),
+        beforeEnter: async () => {
+          const store = useStore();
+          store.ungalaGalaTickets = await callApi({
+            path: "/ungala-gala-tickets",
+            method: "get",
+          });
+        },
         meta: {
           label: { en: "UngalaGala Tickets", es: "Entradas para UngalaGala" },
           order: 2,
@@ -37,6 +52,13 @@ const routes = [
       {
         path: "guest-information",
         component: () => import("pages/GuestInformation.vue"),
+        beforeEnter: async () => {
+          const store = useStore();
+          store.guestInformation = await callApi({
+            path: "/guest-information",
+            method: "get",
+          });
+        },
         meta: {
           label: { en: "Guest Information", es: "Información para huéspedes" },
           order: 3,
@@ -46,6 +68,14 @@ const routes = [
       {
         path: "superdogs-sanctuary",
         component: () => import("pages/SuperDogsSanctuary.vue"),
+        beforeEnter: async () => {
+          const store = useStore();
+
+          store.sanctuary = await callApi({
+            path: "/sanctuary-project",
+            method: "get",
+          });
+        },
         meta: {
           label: { en: "SuperDogs Sanctuary", es: "Santuario SuperDogs" },
         },
