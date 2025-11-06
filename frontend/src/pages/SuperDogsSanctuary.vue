@@ -59,6 +59,16 @@
         </q-td>
       </template>
     </q-table>
+
+    <div class="text-center text-h6 q-mb-md">
+      <a
+        href="https://faanecuador.org/donate"
+        class="text-blue-10"
+        style="text-decoration: none;"
+      >
+        Donate Now!
+      </a>
+    </div>
   </div>
 
   <budget-dialog

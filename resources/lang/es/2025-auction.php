@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'header' => '¡Próximamente!',
-    'image' => '/storage/images/auction-placeholder-es.jpg'
+    'contents' => file_get_contents(__DIR__ . '/html-blocks/2025-auction/contents.html'),
+    'image' => '/storage/images/auction-placeholder-en.jpg'
 ];
