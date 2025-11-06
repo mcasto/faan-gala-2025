@@ -7,7 +7,7 @@
             Gala FAAN-tastica 2025
           </q-toolbar-title>
 
-          <div v-if="Screen.gt.sm">
+          <!-- <div v-if="Screen.gt.sm">
             <template v-for="item of nav" :key="item.name">
               <q-btn
                 v-if="!item.meta.section && !item.meta.dropdown"
@@ -62,7 +62,7 @@
             color="warning"
             class="text-black"
             @click="toggleLanguage"
-          ></q-btn>
+          ></q-btn> -->
 
           <q-btn
             icon="menu"
@@ -70,6 +70,26 @@
             flat
             @click="store.drawer = !store.drawer"
           ></q-btn>
+          <q-btn icon="menu" v-else flat>
+            <q-menu dark>
+              <q-list dense separator dark class="bg-primary">
+                <q-item
+                  v-for="item of nav"
+                  :key="item.name"
+                  clickable
+                  :to="{ name: item.name }"
+                  active-class="text-black bg-grey-3"
+                  exact
+                >
+                  <q-item-section>
+                    <q-item-label>
+                      {{ item.meta.label[store.language] }}
+                    </q-item-label>
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
+          </q-btn>
         </q-toolbar>
       </q-header>
 
