@@ -5,7 +5,7 @@ use App\Http\Controllers\JoinUsController;
 use App\Http\Controllers\MeetFaantasticsController;
 use App\Http\Controllers\SponsorshipOpportunitiesController;
 use App\Http\Controllers\TicketController;
-use App\Http\Controllers\UngalaTicketscontroller;
+use App\Http\Controllers\UngalaTicketsController;
 use App\Http\Controllers\WelcomeController;
 
 use Illuminate\Support\Facades\Route;
@@ -15,7 +15,7 @@ Route::group(['prefix' => '{lang}', 'middleware' => 'api'], function () {
     Route::get('/welcome', [WelcomeController::class, 'index'])
         ->name('api.home.index');
 
-    Route::get('/ungala-gala-tickets', [UngalaTicketscontroller::class, 'index']);
+    Route::get('/ungala-gala-tickets', [UngalaTicketsController::class, 'index']);
 
     Route::get('/guest-information', function ($lang) {
         return require(dirname(__DIR__) . "/resources/lang/{$lang}/guest-information.php");
