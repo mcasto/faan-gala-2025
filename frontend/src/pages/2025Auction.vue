@@ -9,6 +9,4 @@
 import { useStore } from "src/stores/store";
 
 const store = useStore();
-
-console.log({ auction: store.auction2025 });
 </script>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class UngalaTicketscontroller extends Controller
+class UngalaTicketsController extends Controller
 {
     public function index($lang)
     {
