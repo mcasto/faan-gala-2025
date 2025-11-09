@@ -81,7 +81,7 @@
 
     <div class="text-center text-h6 q-mb-md">
       <a
-        href="https://faanecuador.org/donate"
+        href="https://faanecuador.org/donations"
         class="text-blue-10"
         style="text-decoration: none;"
       >

@@ -84,7 +84,7 @@ const routes = [
       {
         path: "donate",
         beforeEnter: () => {
-          location = "https://faanecuador.org/donate";
+          location = "https://faanecuador.org/donations";
         },
         meta: {
           label: { en: "Donate", es: "Donar" },
