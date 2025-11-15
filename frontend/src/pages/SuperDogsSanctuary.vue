@@ -89,13 +89,6 @@
       </a>
     </div>
   </div>
-
-  <budget-dialog
-    v-model="rowInfo.visible"
-    :title="rowInfo.title"
-    :theme="rowInfo.theme"
-    :description="rowInfo.description"
-  ></budget-dialog>
 </template>
 
 <script setup>

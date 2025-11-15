@@ -20,13 +20,14 @@
         <div class="col-12 col-md-6 q-pa-md">
           <div v-html="store.ungalaGalaTickets.wowzaBowza"></div>
         </div>
-      </div>
-    </div>
 
-    <q-separator dark spaced></q-separator>
-    <div class="q-px-xl">
-      <div v-html="store.ungalaGalaTickets.ungalaTicket"></div>
-      <q-img :src="store.ungalaGalaTickets.ticketImage"></q-img>
+        <div class="col-12">
+          <q-separator dark spaced></q-separator>
+        </div>
+        <div class="col-12 col-md-6 q-pa-md">
+          <q-img :src="store.ungalaGalaTickets.ticketImage"></q-img>
+        </div>
+      </div>
     </div>
   </div>
 </template>
