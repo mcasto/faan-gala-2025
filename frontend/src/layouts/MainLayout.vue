@@ -73,6 +73,17 @@
           <q-btn icon="menu" v-else flat label="MENU">
             <q-menu dark>
               <q-list dense separator dark class="bg-primary">
+                <q-item clickable @click="toggleLanguage" class="bg-accent">
+                  <q-item-section side>
+                    <q-icon name="mdi-web"></q-icon>
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label class="text-no-wrap">
+                      {{ languageButtonLabel }}
+                    </q-item-label>
+                  </q-item-section>
+                </q-item>
+
                 <q-item
                   v-for="item of nav"
                   :key="item.name"
@@ -84,17 +95,6 @@
                   <q-item-section>
                     <q-item-label>
                       {{ item.meta.label[store.language] }}
-                    </q-item-label>
-                  </q-item-section>
-                </q-item>
-
-                <q-item clickable @click="toggleLanguage">
-                  <q-item-section side>
-                    <q-icon name="mdi-web"></q-icon>
-                  </q-item-section>
-                  <q-item-section>
-                    <q-item-label>
-                      {{ languageButtonLabel }}
                     </q-item-label>
                   </q-item-section>
                 </q-item>
@@ -111,6 +111,15 @@
         overlay
       >
         <div class="column q-gutter-y-md full-height flex-center">
+          <q-btn
+            :label="languageButtonLabel"
+            icon="mdi-web"
+            color="warning"
+            class="text-black"
+            @click="toggleLanguage"
+            style="width: 75%;"
+          ></q-btn>
+
           <template v-for="item of nav" :key="item.name">
             <q-btn
               v-if="!item.meta.section && !item.meta.dropdown"
@@ -158,15 +167,6 @@
               </q-menu>
             </q-btn>
           </template>
-
-          <q-btn
-            :label="languageButtonLabel"
-            icon="mdi-web"
-            color="warning"
-            class="text-black"
-            @click="toggleLanguage"
-            style="width: 75%;"
-          ></q-btn>
         </div>
       </q-drawer>
 
@@ -199,7 +199,7 @@ const nav = computed(() => {
 });
 
 const languageButtonLabel = computed(() => {
-  return store.language == "en" ? "ES" : "EN";
+  return store.language == "en" ? "Cambiar Idioma: ES" : "Change Language: EN";
 });
 
 const toggleLanguage = () => {

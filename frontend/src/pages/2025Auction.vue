@@ -55,7 +55,6 @@ const store = useStore();
 .auction-container {
   background: linear-gradient(to bottom, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
   min-height: 100vh;
-  padding: 2rem 0;
 }
 
 .content-column {
