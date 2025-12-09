@@ -36,12 +36,6 @@ function contributingArtists()
             'poster' => '/storage/videos/contributing-artists/posters/caro-carolyn-hamilton.jpg'
         ],
         [
-            'name' => 'Catalina Carrasco',
-            'artwork' => 'El Nuevo Mundo, El Pajarito, Sirena',
-            'video' => null, // Video pendiente
-            'poster' => '/storage/videos/contributing-artists/posters/catalina-carrasco.jpg'
-        ],
-        [
             'name' => 'Scott Cushing',
             'artwork' => 'Fotografía, Sin Título',
             'video' => '/storage/videos/contributing-artists/scott-cushing.mp4',

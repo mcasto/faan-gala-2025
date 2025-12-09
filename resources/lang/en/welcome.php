@@ -36,12 +36,6 @@ function contributingArtists()
             'poster' => '/storage/videos/contributing-artists/posters/caro-carolyn-hamilton.jpg'
         ],
         [
-            'name' => 'Catalina Carrasco',
-            'artwork' => 'El Nuevo Mundo (The New World), El Pajarito (The Little Bird), Mermaid',
-            'video' => null, // Video pending
-            'poster' => '/storage/videos/contributing-artists/posters/catalina-carrasco.jpg'
-        ],
-        [
             'name' => 'Scott Cushing',
             'artwork' => 'Photograph, Untitled',
             'video' => '/storage/videos/contributing-artists/scott-cushing.mp4',
