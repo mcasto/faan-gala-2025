@@ -16,55 +16,55 @@ const routes = [
         meta: { label: { en: "Home", es: "Inicio" }, order: 1 },
         name: "home",
       },
-      {
-        path: "2025-auction",
-        component: () => import("pages/2025Auction.vue"),
-        beforeEnter: async () => {
-          const store = useStore();
+      // {
+      //   path: "2025-auction",
+      //   component: () => import("pages/2025Auction.vue"),
+      //   beforeEnter: async () => {
+      //     const store = useStore();
 
-          store.auction2025 = await callApi({
-            path: "/2025-auction",
-            method: "get",
-          });
-        },
-        meta: {
-          label: { en: "2025 Auction", es: "Subasta de 2025" },
-          order: 1,
-        },
-        name: "2025-auction",
-      },
-      {
-        path: "ungala-tickets",
-        component: () => import("pages/UgnalaGalaTickets.vue"),
-        beforeEnter: async () => {
-          const store = useStore();
-          store.ungalaGalaTickets = await callApi({
-            path: "/ungala-gala-tickets",
-            method: "get",
-          });
-        },
-        meta: {
-          label: { en: "UngalaGala Tickets", es: "Entradas para UngalaGala" },
-          order: 2,
-        },
-        name: "unbala-tickets",
-      },
-      {
-        path: "guest-information",
-        component: () => import("pages/GuestInformation.vue"),
-        beforeEnter: async () => {
-          const store = useStore();
-          store.guestInformation = await callApi({
-            path: "/guest-information",
-            method: "get",
-          });
-        },
-        meta: {
-          label: { en: "Guest Information", es: "Información para huéspedes" },
-          order: 3,
-        },
-        name: "guest-information",
-      },
+      //     store.auction2025 = await callApi({
+      //       path: "/2025-auction",
+      //       method: "get",
+      //     });
+      //   },
+      //   meta: {
+      //     label: { en: "2025 Auction", es: "Subasta de 2025" },
+      //     order: 1,
+      //   },
+      //   name: "2025-auction",
+      // },
+      // {
+      //   path: "ungala-tickets",
+      //   component: () => import("pages/UgnalaGalaTickets.vue"),
+      //   beforeEnter: async () => {
+      //     const store = useStore();
+      //     store.ungalaGalaTickets = await callApi({
+      //       path: "/ungala-gala-tickets",
+      //       method: "get",
+      //     });
+      //   },
+      //   meta: {
+      //     label: { en: "UngalaGala Tickets", es: "Entradas para UngalaGala" },
+      //     order: 2,
+      //   },
+      //   name: "unbala-tickets",
+      // },
+      // {
+      //   path: "guest-information",
+      //   component: () => import("pages/GuestInformation.vue"),
+      //   beforeEnter: async () => {
+      //     const store = useStore();
+      //     store.guestInformation = await callApi({
+      //       path: "/guest-information",
+      //       method: "get",
+      //     });
+      //   },
+      //   meta: {
+      //     label: { en: "Guest Information", es: "Información para huéspedes" },
+      //     order: 3,
+      //   },
+      //   name: "guest-information",
+      // },
       {
         path: "superdogs-sanctuary",
         component: () => import("pages/SuperDogsSanctuary.vue"),
