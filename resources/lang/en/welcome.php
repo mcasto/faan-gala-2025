@@ -30,6 +30,12 @@ function contributingArtists()
             'poster' => '/storage/videos/contributing-artists/posters/fausto-bravo.jpg'
         ],
         [
+            'name' => 'Catalina Carrasco',
+            'artwork' => 'El Nuevo Mundo, Frida Tehuana, Frida with Earrings',
+            'video' => '/storage/videos/contributing-artists/catalina-carrasco.mp4',
+            'poster' => '/storage/videos/contributing-artists/posters/catalina-carrasco.jpg'
+        ],
+        [
             'name' => 'Caro (Carolyn Hamilton)',
             'artwork' => 'Lirios Blancos (White Lilies)',
             'video' => '/storage/videos/contributing-artists/caro-carolyn-hamilton.mp4',

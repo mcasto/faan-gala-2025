@@ -30,6 +30,12 @@ function contributingArtists()
             'poster' => '/storage/videos/contributing-artists/posters/fausto-bravo.jpg'
         ],
         [
+            'name' => 'Catalina Carrasco',
+            'artwork' => 'El Nuevo Mundo, Frida Tehuana, Frida con Aretes',
+            'video' => '/storage/videos/contributing-artists/catalina-carrasco.mp4',
+            'poster' => '/storage/videos/contributing-artists/posters/catalina-carrasco.jpg'
+        ],
+        [
             'name' => 'Caro (Carolyn Hamilton)',
             'artwork' => 'Lirios Blancos',
             'video' => '/storage/videos/contributing-artists/caro-carolyn-hamilton.mp4',
